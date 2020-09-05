@@ -9,11 +9,13 @@ JC = javac
 
 CLASSES = \
 	student/Student.java \
-	Main.java
+	circle/Circle.java \
+	dog/Dog.java \
+	Tester.java
 
 all: classes
 
 classes: $(CLASSES:.java=.class)
 
 clean:
-	$(RM) *.class student/*.class
+	$(RM) *.class student/*.class circle/*.class dog/*.class
