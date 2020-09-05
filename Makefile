@@ -1,16 +1,19 @@
+.PHONY: all classes
+
 JFLAGS = -g
 JC = javac
 .SUFFIXES: .java .class
+
 .java.class:
 	$(JC) $(JFLAGS) $*.java
 
 CLASSES = \
-	Student.java \
+	student/Student.java \
 	Main.java
 
-default: classes
+all: classes
 
 classes: $(CLASSES:.java=.class)
 
 clean:
-	$(RM) *.class
+	$(RM) *.class student/*.class

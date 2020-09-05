@@ -10,4 +10,10 @@ public class Student {
 	public void PrintInfo() {
 		System.out.println("Student: " + group + " " + age);
 	}
+	public String getName() {
+		return this.name;
+	}
+	public int getAge() {
+		return this.name;
+	}
 }
