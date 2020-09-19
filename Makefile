@@ -18,6 +18,7 @@ CLASSES = \
 	movablepoint/MovablePoint.java \
 	movable/Movable.java \
 	movablecircle/MovableCircle.java \
+	guidemo/GuiDemo.java \
 	Tester.java
 
 all: classes
@@ -25,4 +26,4 @@ all: classes
 classes: $(CLASSES:.java=.class)
 
 clean:
-	$(RM) *.class student/*.class circle/*.class dog/*.class balls/*.class shape/*.class rectangle/*.class square/*.class movable/*.class movablepoint/*.class
+	$(RM) *.class student/*.class circle/*.class dog/*.class balls/*.class shape/*.class rectangle/*.class square/*.class movable/*.class movablepoint/*.class guidemo/*.class
