@@ -1,13 +1,14 @@
 import java.util.Scanner;
-import dog.*;
-import balls.*;
-import guidemo.*;
-import student.*;
+import dog.Dog;
+import balls.Ball;
+import guidemo.GuiDemo;
+import student.Student;
 import shape.Shape;
 import circle.Circle;
 import rectangle.Rectangle;
 import square.Square;
 import movablecircle.MovableCircle;
+import recursion.Recursion;
 
 public class Tester {
 	public static void main(String[] args) {
@@ -18,6 +19,7 @@ public class Tester {
 		System.out.println(" = 2 Ball");
 		System.out.println(" = 3 Shapes");
 		System.out.println(" = 4 GUI");
+		System.out.println(" = 5 Recursion (prime)");
 		System.out.println("Enter a task number: ");
 		int n = reader.nextInt();
 		switch(n) {
@@ -35,6 +37,11 @@ public class Tester {
 			break;
 			case 4:
 			TestP4();
+			break;
+			case 5:
+			System.out.println("Enter number to check: ");
+			int j = reader.nextInt();
+			TestP5(j);
 			break;
 			default:
 			System.out.println("Wrong task number!");
@@ -109,5 +116,8 @@ public class Tester {
 	}
 	static private void TestP4() {
 		new GuiDemo().setVisible(true);
+	}
+	static private void TestP5(int j) {
+		System.out.println(Recursion.primecheck(j, 2)?"YES":"NO");
 	}
 }
