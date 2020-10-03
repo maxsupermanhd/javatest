@@ -2,7 +2,7 @@ import java.util.Scanner;
 import dog.Dog;
 import balls.Ball;
 import guidemo.GuiDemo;
-import student.Student;
+import student.*;
 import shape.Shape;
 import circle.Circle;
 import rectangle.Rectangle;
@@ -20,6 +20,7 @@ public class Tester {
 		System.out.println(" = 3 Shapes");
 		System.out.println(" = 4 GUI");
 		System.out.println(" = 5 Recursion (prime)");
+		System.out.println(" = 6 Sort");
 		System.out.println("Enter a task number: ");
 		int n = reader.nextInt();
 		switch(n) {
@@ -42,6 +43,9 @@ public class Tester {
 			System.out.println("Enter number to check: ");
 			int j = reader.nextInt();
 			TestP5(j);
+			break;
+			case 6:
+			TestP6();
 			break;
 			default:
 			System.out.println("Wrong task number!");
@@ -119,5 +123,51 @@ public class Tester {
 	}
 	static private void TestP5(int j) {
 		System.out.println(Recursion.primecheck(j, 2)?"YES":"NO");
+	}
+	static private String NameGenerator() {
+		int l = (int)(Math.random()*10)+3;
+		String name = "";
+		String j = "bcdfghjklmnpqrstvwxz";
+		String k = "aeiouy";
+		for(int c=0, i=0; i<l; i++) {
+			if(Math.random() > 0.5 && c < 2) {
+				name += j.charAt((int)(Math.random()*j.length()));
+				c++;
+			} else {
+				name += k.charAt((int)(Math.random()*k.length()));
+				c=0;
+			}
+		}
+		return name;
+	}
+	public static void selectionSort(ExtComparable[] list) {
+		int min;
+		ExtComparable temp;
+		for(int index = 0; index < list.length-1; index++) {
+			min = index;
+			for(int scan = index+1; scan < list.length; scan++) {
+				if(list[scan].compareTo(list[min]) < 0) {
+					min = scan;
+				}
+			}
+			temp = list[min];
+			list[min] = list[index];
+			list[index] = temp;
+		}
+	}
+	static private void TestP6() {
+		int num = 20;
+		Student[] students = new Student[num];
+		for(int i=0; i<num; i++) {
+			students[i] = new Student((int)(Math.random()*num*num/2), NameGenerator());
+		}
+		for(int i=0; i<num; i++) {
+			students[i].PrintInfo();
+		}
+		System.out.println("=======");
+		selectionSort(students);
+		for(int i=0; i<num; i++) {
+			students[i].PrintInfo();
+		}
 	}
 }
