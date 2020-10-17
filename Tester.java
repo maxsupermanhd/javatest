@@ -9,6 +9,7 @@ import rectangle.Rectangle;
 import square.Square;
 import movablecircle.MovableCircle;
 import recursion.Recursion;
+import cards.Cards;
 
 public class Tester {
 	public static void main(String[] args) {
@@ -21,6 +22,7 @@ public class Tester {
 		System.out.println(" = 4 GUI");
 		System.out.println(" = 5 Recursion (prime)");
 		System.out.println(" = 6 Sort");
+		System.out.println(" = 7 Card game");
 		System.out.println("Enter a task number: ");
 		int n = reader.nextInt();
 		switch(n) {
@@ -46,6 +48,9 @@ public class Tester {
 			break;
 			case 6:
 			TestP6();
+			break;
+			case 7:
+			TestP7();
 			break;
 			default:
 			System.out.println("Wrong task number!");
@@ -169,5 +174,10 @@ public class Tester {
 		for(int i=0; i<num; i++) {
 			students[i].PrintInfo();
 		}
+	}
+	static private void TestP7() {
+		Cards g = new Cards();
+		g.Input();
+		g.Game();
 	}
 }
